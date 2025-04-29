@@ -5,9 +5,11 @@ type Props = {
   photos: string[];
 };
 
+const CLASS_NAMES = ["Lior", "Tal", "Rotem", "Ofri", "Inbar", "Other"];
+
 const Folder: React.FC<Props> = ({ classNumber, photos }) => (
   <div>
-    <h2 className="font-bold uppercase">Class {classNumber}</h2>
+    <h2 className="font-bold uppercase">{CLASS_NAMES[classNumber]}</h2>
     <div className="flex flex-wrap gap-2">
       {photos.map(photo => (
         <Image

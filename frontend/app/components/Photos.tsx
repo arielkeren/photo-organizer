@@ -1,7 +1,7 @@
 import { Photo } from "../types";
 import Folder from "./Folder";
 
-const CLASSES = [0, 1, 2, 3, 4];
+const CLASSES = [0, 1, 2, 3, 4, 5];
 
 type Props = {
   photos: Photo[];

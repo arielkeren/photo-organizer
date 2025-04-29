@@ -29,7 +29,7 @@ async def predict_person(file: UploadFile = File(...)):
 
     faces = face_app.get(image)
     if not faces:
-        return {"error": "No face detected."}
+        return {"prediction": 5}
 
     embedding = faces[0].embedding.reshape(1, -1)
     prediction = model.predict(embedding)[0]
