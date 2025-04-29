@@ -46,7 +46,6 @@ export async function POST(req: NextRequest) {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     form.parse(nodeStream as any, (err, fields, files) => {
       if (err) {
-        console.error("Error parsing form:", err);
         resolve(
           NextResponse.json(
             { message: "Error uploading file" },
@@ -55,8 +54,6 @@ export async function POST(req: NextRequest) {
         );
         return;
       }
-
-      console.log("Uploaded files:", files);
 
       resolve(NextResponse.json({ files }, { status: 200 }));
     });
