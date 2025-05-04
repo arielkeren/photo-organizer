@@ -13,11 +13,13 @@ const Folder: React.FC<Props> = ({ classNumber, photos }) => (
     <div className="flex flex-wrap gap-2">
       {photos.map(photo => (
         <Image
+          className="rounded-xl shadow-2xl"
           key={photo}
           src={`/uploads/${photo}`}
           height={200}
           width={200}
           alt=""
+          priority
         />
       ))}
     </div>

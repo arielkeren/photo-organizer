@@ -2,7 +2,7 @@ from fastapi import FastAPI, File, UploadFile
 from fastapi.middleware.cors import CORSMiddleware
 import numpy as np
 import cv2
-import joblib
+from tensorflow.keras.models import load_model
 from insightface.app import FaceAnalysis
 
 app = FastAPI()
@@ -18,7 +18,7 @@ app.add_middleware(
 face_app = FaceAnalysis(name="buffalo_l", providers=["CPUExecutionProvider"])
 face_app.prepare(ctx_id=0)
 
-model = joblib.load("model.pkl")
+model = load_model("model.h5")
 
 
 @app.post("/predict/")
