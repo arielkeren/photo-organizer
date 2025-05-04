@@ -18,7 +18,7 @@ app.add_middleware(
 face_app = FaceAnalysis(name="buffalo_l", providers=["CPUExecutionProvider"])
 face_app.prepare(ctx_id=0)
 
-model = load_model("model.h5")
+model = load_model("model.keras")
 
 
 @app.post("/predict/")
